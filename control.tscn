@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhcaqjlwlm27l"]
+[gd_scene load_steps=14 format=3 uid="uid://bhcaqjlwlm27l"]
 
 [ext_resource type="Script" uid="uid://3blrchmex1di" path="res://control.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://48aq03wenq27" path="res://scripts/upgrades_column.gd" id="2_eh0v1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://7jmgerbkbou8" path="res://scenes/components/upgrades_column_popup.tscn" id="5_pxugv"]
 [ext_resource type="Texture2D" uid="uid://d1djf82d43h80" path="res://Sprites/UpgradeSlot1.png" id="8_0ytqx"]
 [ext_resource type="Texture2D" uid="uid://c7odu3n136462" path="res://Sprites/UpgradeSlot2.png" id="9_pxugv"]
+[ext_resource type="Texture2D" uid="uid://c4ynccxvbbg4t" path="res://Sprites/UpgradeDiode/UpgradeDiodeONE1.png" id="10_pxugv"]
 
 [sub_resource type="SystemFont" id="SystemFont_ee4bf"]
 font_names = PackedStringArray("American Captain")
@@ -115,13 +116,13 @@ autostart = true
 
 [node name="DashBoard" type="TextureRect" parent="."]
 texture_filter = 1
-custom_minimum_size = Vector2(1280, 240)
+custom_minimum_size = Vector2(1920, 280)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -48.0
+offset_top = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_6a6wx")
@@ -141,17 +142,17 @@ theme_override_constants/margin_bottom = 15
 [node name="Control" type="Control" parent="DashBoard/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DashBoard/MarginContainer/Control"]
+[node name="HBoxUpgrades" type="HBoxContainer" parent="DashBoard/MarginContainer/Control"]
 texture_filter = 1
 layout_mode = 1
 offset_right = 625.0
 offset_bottom = 80.0
 
-[node name="Control" type="Control" parent="DashBoard/MarginContainer/Control/HBoxContainer"]
+[node name="Control" type="Control" parent="DashBoard/MarginContainer/Control/HBoxUpgrades"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="UpgradeSlot" type="TextureButton" parent="DashBoard/MarginContainer/Control/HBoxContainer/Control"]
+[node name="UpgradeSlot" type="TextureButton" parent="DashBoard/MarginContainer/Control/HBoxUpgrades/Control"]
 layout_mode = 0
 scale = Vector2(5, 5)
 texture_normal = ExtResource("8_0ytqx")
@@ -166,9 +167,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -80.0
-offset_top = -80.0
+offset_top = -89.92
 offset_right = 80.0
-offset_bottom = 80.0
+offset_bottom = 70.08
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -176,6 +177,30 @@ size_flags_vertical = 4
 texture_normal = ExtResource("3_ee4bf")
 texture_pressed = ExtResource("4_ee4bf")
 stretch_mode = 0
+
+[node name="HBoxDiodes" type="HBoxContainer" parent="DashBoard/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -625.0
+offset_top = 5.0
+offset_right = -65.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="DashBoard/MarginContainer/Control/HBoxDiodes"]
+custom_minimum_size = Vector2(80, 240)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="DashBoard/MarginContainer/Control/HBoxDiodes/Control"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+texture = ExtResource("10_pxugv")
 
 [node name="Layout" type="TextureRect" parent="."]
 modulate = Color(0.4249623, 0.4249623, 0.4249623, 0.8666667)
