@@ -80,7 +80,38 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_6a6wx")
 
-[node name="ClickerButton" type="TextureButton" parent="DashBoard"]
+[node name="MarginContainer" type="MarginContainer" parent="DashBoard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Control" type="Control" parent="DashBoard/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DashBoard/MarginContainer/Control"]
+texture_filter = 1
+layout_mode = 1
+offset_right = 625.0
+offset_bottom = 80.0
+
+[node name="Control" type="Control" parent="DashBoard/MarginContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="UpgradeSlot" type="TextureButton" parent="DashBoard/MarginContainer/Control/HBoxContainer/Control"]
+layout_mode = 0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("8_0ytqx")
+texture_hover = ExtResource("9_pxugv")
+
+[node name="ClickerButton" type="TextureButton" parent="DashBoard/MarginContainer/Control"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -94,27 +125,11 @@ offset_right = 80.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("3_ee4bf")
 texture_pressed = ExtResource("4_ee4bf")
 stretch_mode = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 27.335
-offset_top = 450.06
-offset_right = 131.11899
-offset_bottom = 466.727
-
-[node name="Control" type="Control" parent="HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-
-[node name="UpgradeSlot" type="TextureButton" parent="HBoxContainer/Control"]
-layout_mode = 0
-scale = Vector2(5, 5)
-texture_normal = ExtResource("8_0ytqx")
-texture_hover = ExtResource("9_pxugv")
 
 [node name="Layout" type="TextureRect" parent="."]
 modulate = Color(0.4249623, 0.4249623, 0.4249623, 0.8666667)
@@ -123,4 +138,4 @@ layout_mode = 0
 texture = ExtResource("2_qtu10")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="DashBoard/ClickerButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="DashBoard/MarginContainer/Control/ClickerButton" to="." method="_on_texture_button_pressed"]
