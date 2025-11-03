@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhcaqjlwlm27l"]
+[gd_scene load_steps=17 format=3 uid="uid://bhcaqjlwlm27l"]
 
 [ext_resource type="Script" uid="uid://3blrchmex1di" path="res://control.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://48aq03wenq27" path="res://scripts/upgrades_column.gd" id="2_eh0v1"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://d1djf82d43h80" path="res://Sprites/UpgradeSlot1.png" id="8_0ytqx"]
 [ext_resource type="Texture2D" uid="uid://c7odu3n136462" path="res://Sprites/UpgradeSlot2.png" id="9_pxugv"]
 [ext_resource type="Texture2D" uid="uid://c4ynccxvbbg4t" path="res://Sprites/UpgradeDiode/UpgradeDiodeONE1.png" id="10_pxugv"]
+[ext_resource type="Texture2D" uid="uid://c826cfnxcev08" path="res://Sprites/UpgradeDiode/UpgradeDiodeONE2.png" id="11_g31lc"]
+[ext_resource type="Texture2D" uid="uid://yy0v030yvern" path="res://Sprites/UpgradeDiode/UpgradeDiodeONE3.png" id="12_knq72"]
+[ext_resource type="Texture2D" uid="uid://0osvxqk7q20r" path="res://Sprites/UpgradeDiode/UpgradeDiodeONE4.png" id="13_xvdhi"]
 
 [sub_resource type="SystemFont" id="SystemFont_ee4bf"]
 font_names = PackedStringArray("American Captain")
@@ -190,6 +193,7 @@ offset_right = -65.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 80
 
 [node name="Control" type="Control" parent="DashBoard/MarginContainer/Control/HBoxDiodes"]
 custom_minimum_size = Vector2(80, 240)
@@ -201,6 +205,39 @@ offset_right = 16.0
 offset_bottom = 48.0
 scale = Vector2(5, 5)
 texture = ExtResource("10_pxugv")
+
+[node name="Control2" type="Control" parent="DashBoard/MarginContainer/Control/HBoxDiodes"]
+custom_minimum_size = Vector2(80, 240)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="DashBoard/MarginContainer/Control/HBoxDiodes/Control2"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+texture = ExtResource("11_g31lc")
+
+[node name="Control3" type="Control" parent="DashBoard/MarginContainer/Control/HBoxDiodes"]
+custom_minimum_size = Vector2(80, 240)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="DashBoard/MarginContainer/Control/HBoxDiodes/Control3"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+texture = ExtResource("12_knq72")
+
+[node name="Control4" type="Control" parent="DashBoard/MarginContainer/Control/HBoxDiodes"]
+custom_minimum_size = Vector2(80, 240)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="DashBoard/MarginContainer/Control/HBoxDiodes/Control4"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+texture = ExtResource("13_xvdhi")
 
 [node name="Layout" type="TextureRect" parent="."]
 modulate = Color(0.4249623, 0.4249623, 0.4249623, 0.8666667)
